@@ -11,13 +11,18 @@ test.describe("Homepage does not have accessiblity issues", () => {
     console.log("Running accessibility scan on homepage");
 
     // Test light mode
+    const lightModeClass = await page.locator("html").getAttribute("class");
+    expect(lightModeClass).toContain("light");
     const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
     expect(accessibilityScanResults.violations).toEqual([]);
+    
 
     // Test dark mode
     const themeToggle = page.locator("#themeToggle");
     await themeToggle.first().click();
     console.log("Switching to Dark mode for accessibility testing");
+    const darkModeClass = await page.locator("html").getAttribute("class");
+    expect(darkModeClass).toContain("dark");
 
     const darkModeAccessibilityScanResults = await new AxeBuilder({
       page,
