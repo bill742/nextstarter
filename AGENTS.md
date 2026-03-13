@@ -4,63 +4,19 @@ This document provides guidelines for AI coding agents working in this Next.js b
 
 ## Project Overview
 
-- **Framework**: Next.js 16.0.3 (App Router)
-- **Language**: TypeScript (strict mode enabled)
-- **Styling**: Tailwind CSS v4
-- **UI Components**: ShadCN/UI with Radix UI primitives
-- **Themes**: next-themes with light/dark mode support
-- **Icons**: Lucide React and React Icons
-- **Testing**: Playwright (mentioned but not currently configured)
-- **Node Version**: See `.node-version` file
+Next.js v16 (App Router) with TypeScript. See `package.json` for the full dependency list and `.node-version` for the required Node version.
 
 ---
-
-## Build, Lint, and Test Commands
-
-### Available Scripts
-
-```bash
-# Development server with Turbopack
-npm run dev
-
-# Production build
-npm run build
-
-# Start production server
-npm start
-
-# Run ESLint
-npm run lint
-
-# Format code with Prettier (manual)
-npx prettier --write .
-```
 
 ### Testing
 
-Currently, no test runner is configured in package.json. Playwright is mentioned in documentation but not set up. When adding tests:
+Playwright is configured for end-to-end testing. When adding tests:
 
 - Use Playwright for end-to-end tests
-- Test configuration should be added to support running individual tests
+- Test files live in the `tests/` directory
+- Run tests with `npm run test` or `npx playwright test`
 
 ---
-
-## File and Folder Structure
-
-```
-├── src/
-│   ├── app/              # Next.js App Router pages and layouts
-│   │   ├── layout.tsx    # Root layout with metadata
-│   │   ├── page.tsx      # Home page
-│   │   ├── robots.ts     # Robots.txt configuration
-│   │   └── sitemap.ts    # Sitemap configuration
-│   └── components/
-│       ├── ui/           # Reusable UI components (ShadCN/UI)
-│       └── sections/     # Page-specific sections
-├── public/               # Static assets
-├── .github/              # GitHub configuration
-└── [config files]        # Root-level configuration
-```
 
 ### Naming Conventions
 
@@ -75,44 +31,18 @@ Currently, no test runner is configured in package.json. Playwright is mentioned
 
 ### TypeScript
 
-- **Strict mode**: Enabled in tsconfig.json
-- **Target**: ES2017
-- **Module resolution**: bundler
-- **Path alias**: `@/*` maps to `./src/*`
+- **Path alias**: `@/*` maps to `./src/*` (see `tsconfig.json`)
 - **Type imports**: Use `import type` for type-only imports
 - **Function style**: Prefer arrow functions (`prefer-arrow-callback`)
 - **String concatenation**: Use template literals (`prefer-template`)
 
 ### Import Ordering
 
-Imports are automatically sorted by `simple-import-sort` plugin in this order:
-
-1. Side-effect imports (`import './styles.css'`)
-2. Node built-ins and external packages (`import React from 'react'`)
-3. Internal absolute imports
-4. Relative imports (`./component`, `../utils`)
-5. Imports from `src/` directory
-
-Example:
-
-```typescript
-import "./globals.css";
-
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import * as React from "react";
-
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-```
+Imports are automatically sorted by the `simple-import-sort` ESLint plugin. Do not manually reorder imports.
 
 ### Formatting
 
-**Prettier Configuration**:
-
-- Trailing commas: ES5 style
-- Plugin: `prettier-plugin-tailwindcss` for class sorting
-- Line length and other defaults follow Prettier standards
+Prettier config is in `.prettierrc.json`. Key ESLint rules to be aware of when writing code:
 
 **ESLint Rules**:
 
@@ -325,9 +255,6 @@ export const SkipLink = () => (
 ## Environment Variables
 
 - Create `.env` file from `.env.example`
-- Required variables:
-  - `NEXT_PUBLIC_SITE_URL`: Full site URL
-  - `NEXT_PUBLIC_SITE_NAME`: Site name
 - Use `NEXT_PUBLIC_` prefix for client-side accessible variables
 
 ---
