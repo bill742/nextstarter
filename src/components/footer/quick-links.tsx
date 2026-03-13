@@ -22,7 +22,7 @@ const QuickLinks = () => {
           <button
             type="button"
             onClick={() => scrollToSection(link.href.substring(1))}
-            className="text-stone-600 transition-colors hover:text-orange-600 dark:text-stone-400 dark:hover:text-orange-400"
+            className="text-stone-600 transition-colors hover:text-orange-800 dark:text-stone-400 dark:hover:text-orange-400"
             aria-label={link.label}
           >
             {link.label}

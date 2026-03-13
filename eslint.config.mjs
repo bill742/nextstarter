@@ -24,8 +24,8 @@ const eslintConfig = [
   },
   ...next,
   ...compat.config({
-    extends: ["prettier"],
-    ignorePatterns: ["src/components/ui"],
+    extends: ["next", "prettier"],
+    ignorePatterns: ["src/components/ui", "seed.spec.ts"],
     plugins: ["simple-import-sort", "sort-keys-fix"],
 
     rules: {

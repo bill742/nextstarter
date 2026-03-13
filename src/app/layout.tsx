@@ -7,6 +7,7 @@ import * as React from "react";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
+import SkipNav from "@/components/skip-nav";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ const RootLayout = ({
           enableSystem
           disableTransitionOnChange
         >
+          <SkipNav />
           <Header />
           {children}
           <Footer />

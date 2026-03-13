@@ -10,6 +10,10 @@ import Stack from "./stack";
 const LandingPage = () => {
   return (
     <>
+      <h1 className="sr-only">
+        NextStarter - A boilerplate for creating NextJS projects with TypeScript
+        and Tailwind.
+      </h1>
       <About />
 
       <Stack />

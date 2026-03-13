@@ -51,7 +51,10 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-stone-600 transition-colors hover:text-orange-600 dark:text-stone-400 dark:hover:text-orange-400"
                 >
-                  <SiGithub className="h-4 w-4" />
+                  <SiGithub
+                    className="h-4 w-4"
+                    aria-label="GitHub Repository"
+                  />
                   GitHub Repository
                 </a>
               </li>
@@ -104,7 +107,10 @@ const Footer = () => {
                 className="transition-colors hover:text-orange-600 dark:hover:text-orange-400"
                 aria-label="GitHub"
               >
-                <SiGithub className="h-5 w-5" />
+                <SiGithub
+                  className="h-5 w-5"
+                  aria-label="View project on GitHub"
+                />
               </a>
             </div>
           </div>

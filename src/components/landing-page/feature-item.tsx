@@ -17,7 +17,7 @@ const FeatureItem = ({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-orange-600 underline decoration-orange-300 underline-offset-2 transition-colors hover:text-orange-700 dark:text-orange-400 dark:decoration-orange-600 dark:hover:text-orange-300"
+            className="font-medium text-orange-800 underline decoration-orange-300 underline-offset-2 transition-colors hover:text-orange-700 dark:text-orange-400 dark:decoration-orange-600 dark:hover:text-orange-300"
           >
             {linkText}
           </a>

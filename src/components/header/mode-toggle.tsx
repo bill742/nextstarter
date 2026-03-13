@@ -36,11 +36,12 @@ const ModeToggle = () => {
             variant={"outline"}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            id="themeToggle"
           >
             {theme === "dark" ? (
-              <Sun className="h-4 w-4" />
+              <Sun className="h-4 w-4" aria-label="Light Mode" />
             ) : (
-              <Moon className="h-4 w-4" />
+              <Moon className="h-4 w-4" aria-label="Dark Mode" />
             )}
           </Button>
         </TooltipTrigger>

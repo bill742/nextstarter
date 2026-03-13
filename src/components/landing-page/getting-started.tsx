@@ -44,7 +44,10 @@ const GettingStarted = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <SiGithub className="mr-2 h-5 w-5" />
+                    <SiGithub
+                      className="mr-2 h-5 w-5"
+                      aria-label="View on GitHub"
+                    />
                     View on GitHub
                   </Link>
                 </Button>

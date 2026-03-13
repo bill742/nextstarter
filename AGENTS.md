@@ -225,11 +225,74 @@ export default MyComponent;
 
 ### Accessibility
 
-- All interactive elements must have accessible labels
-- Use ARIA attributes when appropriate
-- Follow WCAG 2.1 guidelines
-- Ensure keyboard navigation works
-- Test with screen readers when possible
+- Use semantic HTML and correct roles; prefer native elements (`button`, `a`, `input`) over clickable `div`s
+- Provide an accessible name for every interactive control via text, `<label htmlFor>`, `aria-label`, or `aria-labelledby` (icons-only controls must have `aria-label`)
+- SVGs and icons: decorative icons must be `aria-hidden="true"` and `focusable="false"`; meaningful icons require `role="img"` with `aria-label` or a `<title>` element
+- Keyboard: all UI must be operable with keyboard (Tab, Shift+Tab, Enter/Space); manage focus on open/close of dialogs, trap focus in modals, support `Escape` to dismiss
+- State: use `aria-expanded`, `aria-controls`, `aria-pressed`, `aria-selected`, and `aria-live` where appropriate; connect labels with controls via `id`/`aria-*`
+- Focus: maintain logical tab order, ensure visible focus outlines, and move focus to the first meaningful element after route changes
+- Images/media: provide descriptive `alt` text; avoid relying on color alone; ensure captions/transcripts for media when applicable
+- Color/contrast: meet WCAG 2.1 AA contrast; verify both light and dark themes
+- Landmarks: use `<header>`, `<nav>`, `<main id="main">`, `<footer>`; include a "Skip to content" link and set `aria-current="page"` on the active nav item
+- Testing: use screen readers (VoiceOver/NVDA) and automated checks; include `eslint-plugin-jsx-a11y` and verify with Playwright interactions (focus order, keyboard support)
+
+```tsx
+// Icon-only button (Lucide React) — accessible name via aria-label; icon hidden from AT
+import { Search } from "lucide-react";
+
+export const IconButton = () => (
+  <button
+    type="button"
+    aria-label="Search"
+    className="inline-flex items-center justify-center"
+  >
+    <Search aria-hidden="true" focusable="false" />
+  </button>
+);
+```
+
+```tsx
+// Meaningful SVG — labeled via title/aria-labelledby
+export const BrandMark = () => (
+  <svg
+    role="img"
+    aria-labelledby="logo-title"
+    viewBox="0 0 24 24"
+    width={24}
+    height={24}
+  >
+    <title id="logo-title">NextStarter logo</title>
+    <path d="M3 3h18v18H3z" />
+  </svg>
+);
+```
+
+```tsx
+// Disclosure pattern — state exposed with aria-expanded/aria-controls
+export const Filters = ({ open }: { open: boolean }) => (
+  <div>
+    <button
+      aria-expanded={open}
+      aria-controls="filters-panel"
+      className="font-medium"
+    >
+      Filters
+    </button>
+    <div id="filters-panel" hidden={!open}>
+      {/* filter content */}
+    </div>
+  </div>
+);
+```
+
+```tsx
+// Skip link — improves keyboard navigation
+export const SkipLink = () => (
+  <a href="#main" className="sr-only focus:not-sr-only">
+    Skip to content
+  </a>
+);
+```
 
 ### Theme Support
 

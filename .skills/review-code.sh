@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Code Review Script for Next.js Boilerplate
+# Code Review Script for NextStarter
 # Reviews codebase against AGENTS.md guidelines
 
 set -e
