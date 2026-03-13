@@ -3,10 +3,8 @@
 import { scrollToSection } from "@/lib/utils";
 
 const quickLinkItems = [
-  { href: "#about", id: 1, label: "About" },
-  { href: "#stack", id: 2, label: "Tech Stack" },
-  { href: "#features", id: 3, label: "Features" },
-  { href: "#getting-started", id: 4, label: "Getting Started" },
+  { href: "#", id: 3, label: "Menu Item 1" },
+  { href: "#", id: 2, label: "Menu Item 2" },
 ];
 
 /**

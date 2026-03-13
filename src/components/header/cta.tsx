@@ -13,7 +13,7 @@ const Cta = () => {
       onClick={() => scrollToSection("getting-started")}
       aria-label="Get Started"
     >
-      Get Started
+      Demo Button
     </button>
   );
 };

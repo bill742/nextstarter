@@ -9,23 +9,18 @@ test.describe("Home page header and navigation", () => {
     const header = page.locator("header");
     await expect(header).toBeVisible();
 
-    const h1 = await page.locator("h1").textContent();
-    expect(h1?.trim()).toBe(
-      "NextStarter - A boilerplate for creating NextJS projects with TypeScript and Tailwind."
-    );
+    const h1 = await header.locator("h1").textContent();
+    expect(h1).toBe("NextStarter");
 
     const nav = page.getByRole("navigation");
     await expect(nav).toBeVisible();
-    // nav.locator("button").first().click();
-
-    // await nav.getByRole("listitem").filter({ hasText: "Tech Stack" }).click();
   });
 });
 
 test.describe("Home page sections", () => {
   test("Verify home page sections display correct data.", async ({ page }) => {
-    const aboutSection = page.locator("section#about");
-    const aboutH2 = aboutSection.locator("h2").first();
-    expect(await aboutH2.textContent()).toBe("About NextStarter");
+    await page.goto("./");
+    const sectionTitle = page.locator("h2").first();
+    expect(await sectionTitle.textContent()).toBe("Welcome to NextStarter!");
   });
 });
