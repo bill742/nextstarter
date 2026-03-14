@@ -46,7 +46,7 @@ test.describe("Page Metadata and Document Structure", () => {
       .locator('meta[name="description"]')
       .getAttribute("content");
     expect(descriptionMeta).toBe(
-      "A boilerplate for creating NextJS projects with TypeScript and Tailwind."
+      "A modern Next.js boilerplate for building production-ready web applications."
     );
 
     const canonicalLink = await page

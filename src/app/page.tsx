@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     canonical: process.env.NEXT_PUBLIC_SITE_URL,
   },
   description:
-    "A boilerplate for creating NextJS projects with TypeScript and Tailwind.",
+    "A modern Next.js boilerplate for building production-ready web applications.",
 };
 
 /**
