@@ -7,16 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-03-14
+
 ### Added
 
-- Playwright testing framework configuration
-- Test specifications for end-to-end testing
+- Playwright end-to-end testing framework configuration (`playwright.config.ts`)
+- Test specifications for header, sections, metadata, and accessibility
 - GitHub Actions workflow for Playwright tests
-- VSCode MCP configuration
+- GitHub Actions workflow for Vercel deployment trigger
+- Skip navigation component (`src/components/skip-nav.tsx`)
+- VSCode launch configuration for debugging
+- `dotenv` package for reading environment variables in config files
 
 ### Changed
 
+- Replaced `AGENTS.md` with `CLAUDE.md` and simplified agent instructions
+- Updated README with new installation instructions and feature overview
+- Updated default Node.js version (`.node-version`)
 - Updated `.gitignore` with additional exclusions
+- Minor ESLint configuration fixes
+- Fixed package vulnerabilities
+
+### Fixed
+
+- Missing `aria-label` on interactive elements
+- Accessibility issues identified during Playwright testing
+
+### Removed
+
+- Landing page features (icon carousel, features list, getting started section) — moved to a separate repository
 
 ## [0.3.0] - 2026-02-07
 
@@ -166,16 +185,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Basic project structure
 - README documentation
 
-[Unreleased]: https://github.com/bill742/nextjs-boilerplate/compare/v0.3.0...HEAD
-[0.3.0]: https://github.com/bill742/nextjs-boilerplate/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/bill742/nextjs-boilerplate/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/bill742/nextjs-boilerplate/compare/v0.0.9...v0.1.0
-[0.0.9]: https://github.com/bill742/nextjs-boilerplate/compare/v0.0.8...v0.0.9
-[0.0.8]: https://github.com/bill742/nextjs-boilerplate/compare/v0.0.7...v0.0.8
-[0.0.7]: https://github.com/bill742/nextjs-boilerplate/compare/v0.0.6...v0.0.7
-[0.0.6]: https://github.com/bill742/nextjs-boilerplate/compare/v0.0.5...v0.0.6
-[0.0.5]: https://github.com/bill742/nextjs-boilerplate/compare/v0.0.4...v0.0.5
-[0.0.4]: https://github.com/bill742/nextjs-boilerplate/compare/v0.0.3...v0.0.4
-[0.0.3]: https://github.com/bill742/nextjs-boilerplate/compare/v0.0.2...v0.0.3
-[0.0.2]: https://github.com/bill742/nextjs-boilerplate/compare/v0.0.1...v0.0.2
-[0.0.1]: https://github.com/bill742/nextjs-boilerplate/releases/tag/v0.0.1
+[Unreleased]: https://github.com/bill742/nextstarter/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/bill742/nextstarter/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/bill742/nextstarter/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/bill742/nextstarter/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/bill742/nextstarter/compare/v0.0.9...v0.1.0
+[0.0.9]: https://github.com/bill742/nextstarter/compare/v0.0.8...v0.0.9
+[0.0.8]: https://github.com/bill742/nextstarter/compare/v0.0.7...v0.0.8
+[0.0.7]: https://github.com/bill742/nextstarter/compare/v0.0.6...v0.0.7
+[0.0.6]: https://github.com/bill742/nextstarter/compare/v0.0.5...v0.0.6
+[0.0.5]: https://github.com/bill742/nextstarter/compare/v0.0.4...v0.0.5
+[0.0.4]: https://github.com/bill742/nextstarter/compare/v0.0.3...v0.0.4
+[0.0.3]: https://github.com/bill742/nextstarter/compare/v0.0.2...v0.0.3
+[0.0.2]: https://github.com/bill742/nextstarter/compare/v0.0.1...v0.0.2
+[0.0.1]: https://github.com/bill742/nextstarter/releases/tag/v0.0.1
