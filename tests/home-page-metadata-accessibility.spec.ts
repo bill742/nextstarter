@@ -40,14 +40,12 @@ test.describe("Page Metadata and Document Structure", () => {
     expect(lang).toBe("en");
 
     const title = await page.title();
-    expect(title).toBe("NextStarter");
+    expect(title).toBe(process.env.NEXT_PUBLIC_SITE_NAME);
 
     const descriptionMeta = await page
       .locator('meta[name="description"]')
       .getAttribute("content");
-    expect(descriptionMeta).toBe(
-      "A modern Next.js boilerplate for building production-ready web applications."
-    );
+    expect(descriptionMeta).toBe(process.env.NEXT_PUBLIC_SITE_METADESCRIPTION);
 
     const canonicalLink = await page
       .locator('link[rel="canonical"]')

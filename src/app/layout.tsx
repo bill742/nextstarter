@@ -23,8 +23,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || ""),
   openGraph: {
-    description:
-      "A modern Next.js boilerplate for building production-ready web applications.",
+    description: process.env.NEXT_PUBLIC_SITE_METADESCRIPTION,
     images: "",
     title: "NextStarter",
   },

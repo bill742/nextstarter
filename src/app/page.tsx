@@ -4,8 +4,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: process.env.NEXT_PUBLIC_SITE_URL,
   },
-  description:
-    "A modern Next.js boilerplate for building production-ready web applications.",
+  description: process.env.NEXT_PUBLIC_SITE_METADESCRIPTION,
 };
 
 /**
@@ -20,10 +19,7 @@ const Home = () => {
           <h2 className="font-serif text-3xl font-bold text-stone-900 md:text-4xl dark:text-stone-50">
             Welcome to NextStarter!
           </h2>
-          <p>
-            A modern Next.js boilerplate for building production-ready web
-            applications.
-          </p>
+          <p>{process.env.NEXT_PUBLIC_SITE_METADESCRIPTION}</p>
         </section>
       </main>
     </div>
