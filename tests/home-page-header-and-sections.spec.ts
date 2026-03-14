@@ -10,7 +10,7 @@ test.describe("Home page header and navigation", () => {
     await expect(header).toBeVisible();
 
     const h1 = await header.locator("h1").textContent();
-    expect(h1).toBe("NextStarter");
+    expect(h1).toBe(process.env.NEXT_PUBLIC_SITE_NAME);
 
     const nav = page.getByRole("navigation");
     await expect(nav).toBeVisible();
