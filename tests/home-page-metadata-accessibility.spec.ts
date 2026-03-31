@@ -2,7 +2,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-test.describe("Homepage does not have accessiblity issues", () => {
+test.describe("Homepage does not have accessibility issues", () => {
   test("Should not have any automatically detectable accessibility issues", async ({
     page,
   }) => {
