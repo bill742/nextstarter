@@ -1,4 +1,4 @@
-# Agent Instructions for Next.js Boilerplate
+# Agent Instructions for NextStarter
 
 This document provides guidelines for AI coding agents working in this Next.js boilerplate repository.
 

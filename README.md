@@ -5,7 +5,7 @@ A modern Next.js boilerplate to ship production-ready projects fast — with Typ
 [![ESLint](https://github.com/bill742/nextstarter/actions/workflows/eslint.yml/badge.svg)](https://github.com/bill742/nextstarter/actions/workflows/eslint.yml)
 [![Playwright Tests](https://github.com/bill742/nextstarter/actions/workflows/playwright.yml/badge.svg)](https://github.com/bill742/nextstarter/actions/workflows/playwright.yml)
 
-**[Live Demo](https://nextjs-boilerplate-three-iota-34.vercel.app/)**
+**[Live Demo](https://www.nextstarter.app/)**
 
 ---
 
