@@ -1,0 +1,92 @@
+name: Update Changelog
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  update-changelog:
+    name: Update CHANGELOG.md
+    runs-on: ubuntu-latest
+    # Skip if this commit is itself a changelog update
+    if: "!startsWith(github.event.head_commit.message, 'Update CHANGELOG.md')"
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Categorize commit and update changelog
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          python3 << 'EOF'
+          import os
+          import re
+
+          # Use only the first line of the commit message
+          commit_msg = os.environ['COMMIT_MSG'].split('\n')[0].strip()
+          first_word = commit_msg.split()[0].lower().rstrip(':') if commit_msg else ''
+
+          if first_word in ('add', 'added', 'adds'):
+              category = 'Added'
+          elif first_word in ('fix', 'fixed', 'fixes'):
+              category = 'Fixed'
+          elif first_word in ('remove', 'removed', 'removes', 'delete', 'deleted', 'deletes'):
+              category = 'Removed'
+          else:
+              category = 'Changed'
+
+          with open('CHANGELOG.md', 'r') as f:
+              content = f.read()
+
+          entry = f"- {commit_msg}"
+
+          # Locate the [Unreleased] section
+          unreleased_marker = '## [Unreleased]'
+          unreleased_start = content.find(unreleased_marker)
+          if unreleased_start == -1:
+              print('No [Unreleased] section found — skipping')
+              exit(0)
+
+          body_start = unreleased_start + len(unreleased_marker)
+          next_version = content.find('\n## [', body_start)
+          unreleased_body = content[body_start:next_version] if next_version != -1 else content[body_start:]
+
+          cat_heading = f'### {category}'
+
+          if cat_heading in unreleased_body:
+              # Append entry to the existing category section
+              cat_idx = unreleased_body.find(cat_heading)
+              next_cat = unreleased_body.find('\n### ', cat_idx + 1)
+              if next_cat == -1:
+                  insert_at = len(unreleased_body.rstrip('\n'))
+                  new_body = unreleased_body[:insert_at] + f'\n{entry}' + unreleased_body[insert_at:]
+              else:
+                  new_body = unreleased_body[:next_cat] + f'\n{entry}' + unreleased_body[next_cat:]
+          else:
+              # Add a new category section at the top of [Unreleased]
+              new_body = f'\n\n{cat_heading}\n\n{entry}' + unreleased_body
+
+          new_content = (
+              content[:body_start]
+              + new_body
+              + (content[next_version:] if next_version != -1 else '')
+          )
+
+          with open('CHANGELOG.md', 'w') as f:
+              f.write(new_content)
+
+          print(f'Added to [{category}]: {entry}')
+          EOF
+
+      - name: Commit changelog update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git diff --staged --quiet || git commit -m "Update CHANGELOG.md [skip ci]"
+          git push
