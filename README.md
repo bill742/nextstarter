@@ -39,7 +39,7 @@ A modern Next.js boilerplate to ship production-ready projects fast — with Typ
 
 - **Tailwind CSS v4** with a custom stone/orange design theme
 - **Light and dark modes** — system preference by default, user-toggleable
-- **ShadCN/UI** component library (Button, Card, Carousel, Tooltip)
+- **ShadCN/UI** component library (Button, Tooltip)
 - **Radix UI** primitives for accessible, headless components
 - Mobile-first responsive design with Tailwind breakpoints
 
