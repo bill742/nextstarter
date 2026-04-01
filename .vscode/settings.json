@@ -7,7 +7,14 @@
     "*.css": "tailwindcss"
   },
   "cSpell.words": [
+    "DISPLAYNAME",
+    "elif",
+    "extname",
+    "JSDOCS",
     "METADESCRIPTION",
-    "nextstarter"
+    "nextstarter",
+    "SARIF",
+    "toggleable",
+    "WCAG"
   ]
 }
