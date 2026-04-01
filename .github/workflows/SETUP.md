@@ -126,7 +126,7 @@ Force code review to pass before merging:
 1. Go to **Settings** → **Branches**
 2. Click **Add rule** or edit existing rule for `main`
 3. Check ☑️ **Require status checks to pass before merging**
-4. Search for "Review code against AGENTS.md"
+4. Search for "Review code against CLAUDE.md"
 5. Check it ☑️
 6. Click **Save changes**
 
@@ -353,7 +353,7 @@ Now that setup is complete:
 **Documentation:**
 - [Workflow README](./README.md) - Complete reference
 - [Skills README](../../.skills/README.md) - Review script docs
-- [AGENTS.md](../../AGENTS.md) - Coding guidelines
+- [CLAUDE.md](../../CLAUDE.md) - Coding guidelines
 
 **Issues:**
 - Workflow problems → GitHub Issues
@@ -364,7 +364,7 @@ Now that setup is complete:
 
 ## ✨ Success!
 
-Your code review workflow is now active and will automatically review all code changes against your AGENTS.md guidelines!
+Your code review workflow is now active and will automatically review all code changes against your CLAUDE.md guidelines!
 
 **Test it now:**
 ```bash

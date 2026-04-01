@@ -9,7 +9,7 @@ on:
 
 jobs:
   code-review:
-    name: Review code against AGENTS.md
+    name: Review code against CLAUDE.md
     runs-on: ubuntu-latest
     
     permissions:
@@ -106,7 +106,7 @@ jobs:
             </details>
             
             ---
-            *Review performed against [AGENTS.md](../blob/main/AGENTS.md) guidelines*
+            *Review performed against [CLAUDE.md](../blob/main/CLAUDE.md) guidelines*
             `;
             
             // Find existing comment
@@ -148,7 +148,7 @@ jobs:
           WARNINGS="${{ steps.review.outputs.WARNINGS }}"
           
           if [ "$ERRORS" -eq 0 ] && [ "$WARNINGS" -eq 0 ]; then
-            echo "✅ **All checks passed!** Code is compliant with AGENTS.md" >> $GITHUB_STEP_SUMMARY
+            echo "✅ **All checks passed!** Code is compliant with CLAUDE.md" >> $GITHUB_STEP_SUMMARY
           elif [ "$ERRORS" -gt 0 ]; then
             echo "❌ **Found $ERRORS error(s) and $WARNINGS warning(s)**" >> $GITHUB_STEP_SUMMARY
           else

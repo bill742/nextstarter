@@ -6,7 +6,7 @@
 
 ## Description
 
-Reviews the codebase against AGENTS.md guidelines and produces a detailed report of recommendations based on any found errors or issues.
+Reviews the codebase against CLAUDE.md guidelines and produces a detailed report of recommendations based on any found errors or issues.
 
 ## Usage
 
@@ -21,7 +21,7 @@ Reviews the codebase against AGENTS.md guidelines and produces a detailed report
 
 ## Review Checklist
 
-This skill performs the following checks against AGENTS.md guidelines:
+This skill performs the following checks against CLAUDE.md guidelines:
 
 ### 1. Naming Conventions
 
@@ -87,7 +87,7 @@ This skill performs the following checks against AGENTS.md guidelines:
 
 ### 10. File Structure
 
-- ✓ Follows documented structure in AGENTS.md
+- ✓ Follows documented structure in CLAUDE.md
 - ✓ UI components in `src/components/ui/`
 - ✓ Page sections in `src/components/sections/`
 

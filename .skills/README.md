@@ -6,7 +6,7 @@ This directory contains reusable skills and scripts for maintaining code quality
 
 ### 1. Code Review (`code-review.md`)
 
-**Purpose:** Reviews the codebase against AGENTS.md guidelines and produces a detailed report.
+**Purpose:** Reviews the codebase against CLAUDE.md guidelines and produces a detailed report.
 
 **Status:** Documentation (Future OpenCode skill integration)
 
@@ -59,7 +59,7 @@ chmod +x .skills/review-code.sh
 
 ```
 ================================================
-  Code Review Against AGENTS.md Guidelines
+  Code Review Against CLAUDE.md Guidelines
 ================================================
 
 📁 Scanning source files...
@@ -82,7 +82,7 @@ Total Files:  15
 Errors:       0
 Warnings:     0
 
-✅ All checks passed! Code is compliant with AGENTS.md
+✅ All checks passed! Code is compliant with CLAUDE.md
 ```
 
 ---
@@ -187,7 +187,7 @@ To require code review before merging:
 1. **Settings** → **Branches** → **Branch protection rules**
 2. Add rule for `main` branch
 3. Enable **Require status checks to pass**
-4. Select **Review code against AGENTS.md**
+4. Select **Review code against CLAUDE.md**
 
 See [.github/workflows/README.md](../.github/workflows/README.md) for full documentation.
 
@@ -214,14 +214,14 @@ Until then, use the provided bash scripts.
 
 Update skills when:
 
-- AGENTS.md guidelines change
+- CLAUDE.md guidelines change
 - New code patterns emerge
 - ESLint rules are modified
 - Project structure changes
 
 ### Keeping Skills in Sync
 
-1. Review AGENTS.md regularly
+1. Review CLAUDE.md regularly
 2. Update skill checks accordingly
 3. Test with `review-code.sh`
 4. Update documentation
@@ -272,7 +272,7 @@ Some checks may have edge cases. Review the generated report and update the scri
 
 ## Links
 
-- [AGENTS.md](../AGENTS.md) - Project coding guidelines
+- [CLAUDE.md](../CLAUDE.md) - Project coding guidelines
 - [ESLint Config](../eslint.config.mjs) - Linting rules
 - [TypeScript Config](../tsconfig.json) - TypeScript settings
 

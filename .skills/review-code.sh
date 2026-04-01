@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Code Review Script for NextStarter
-# Reviews codebase against AGENTS.md guidelines
+# Reviews codebase against CLAUDE.md guidelines
 
 set -e
 
@@ -17,7 +17,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 echo "================================================"
-echo "  Code Review Against AGENTS.md Guidelines"
+echo "  Code Review Against CLAUDE.md Guidelines"
 echo "================================================"
 echo ""
 
@@ -219,7 +219,7 @@ EOF
   if [ $JSDOC_ISSUES -gt 0 ]; then
     echo "#### Missing JSDoc Comments" >> "$REPORT_FILE"
     echo "" >> "$REPORT_FILE"
-    echo "**Issue:** Components missing JSDoc comments - Required per AGENTS.md guidelines" >> "$REPORT_FILE"
+    echo "**Issue:** Components missing JSDoc comments - Required per CLAUDE.md guidelines" >> "$REPORT_FILE"
     echo "" >> "$REPORT_FILE"
     echo "**Files affected:**" >> "$REPORT_FILE"
     for f in "${JSDOC_FILES[@]}"; do
@@ -262,7 +262,7 @@ EOF
   if [ $FUNCTION_ISSUES -gt 0 ]; then
     echo "#### Function Declarations" >> "$REPORT_FILE"
     echo "" >> "$REPORT_FILE"
-    echo "**Issue:** Using function declarations instead of arrow functions - Prefer arrow functions per AGENTS.md" >> "$REPORT_FILE"
+    echo "**Issue:** Using function declarations instead of arrow functions - Prefer arrow functions per CLAUDE.md" >> "$REPORT_FILE"
     echo "" >> "$REPORT_FILE"
     echo "**Files affected:**" >> "$REPORT_FILE"
     for f in "${FUNCTION_FILES[@]}"; do
@@ -303,7 +303,7 @@ echo -e "Warnings:     ${YELLOW}$WARNINGS${NC}"
 echo ""
 
 if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
-  echo -e "${GREEN}✅ All checks passed! Code is compliant with AGENTS.md${NC}"
+  echo -e "${GREEN}✅ All checks passed! Code is compliant with CLAUDE.md${NC}"
   echo ""
 else
   echo -e "${YELLOW}⚠️  Issues found. Please review:${NC}"

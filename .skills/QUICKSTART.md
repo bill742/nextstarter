@@ -9,7 +9,7 @@ bash .skills/review-code.sh
 That's it! The script will:
 
 - ✓ Scan all TypeScript files in `src/`
-- ✓ Check against AGENTS.md guidelines
+- ✓ Check against CLAUDE.md guidelines
 - ✓ Generate a detailed report
 - ✓ Show results in your terminal
 
@@ -63,7 +63,7 @@ Total Files:  15
 Errors:       0
 Warnings:     0
 
-✅ All checks passed! Code is compliant with AGENTS.md
+✅ All checks passed! Code is compliant with CLAUDE.md
 ```
 
 Your code follows all guidelines!
@@ -235,7 +235,7 @@ Increase timeout or check for infinite loops in your code
 ## 📚 More Information
 
 - Full documentation: `.skills/code-review.md`
-- Project guidelines: `AGENTS.md`
+- Project guidelines: `CLAUDE.md`
 - Skills overview: `.skills/README.md`
 
 ---

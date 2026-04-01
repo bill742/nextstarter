@@ -24,7 +24,7 @@ This directory contains automated workflows for the Next.js Boilerplate project.
 
 ### 2. Code Review (`code-review.yml`) ⭐ NEW
 
-**Purpose:** Automatically reviews code against AGENTS.md guidelines
+**Purpose:** Automatically reviews code against CLAUDE.md guidelines
 
 **Triggers:**
 - Push to `main` branch
@@ -99,7 +99,7 @@ The workflow will add/update a comment like this:
 
 **All Clear:**
 ```
-✅ All checks passed! Code is compliant with AGENTS.md
+✅ All checks passed! Code is compliant with CLAUDE.md
 
 Total Files: 11
 Errors: 0
@@ -139,7 +139,7 @@ To require code review to pass before merging:
 1. Go to **Settings** → **Branches**
 2. Add/edit branch protection rule for `main`
 3. Enable "Require status checks to pass"
-4. Select "Review code against AGENTS.md"
+4. Select "Review code against CLAUDE.md"
 5. Save changes
 
 ### Adjusting Triggers
@@ -248,7 +248,7 @@ npm run lint
 | File | Purpose | Triggers |
 |------|---------|----------|
 | `eslint.yml` | Lint JavaScript/TypeScript | Push, PR, Weekly |
-| `code-review.yml` | Review against AGENTS.md | Push, PR, Manual |
+| `code-review.yml` | Review against CLAUDE.md | Push, PR, Manual |
 | `triggerVercelDeployment.yml` | Deploy to Vercel | Custom |
 
 ---
@@ -272,7 +272,7 @@ npm run lint
 
 1. **Monitor workflow runs** - Check Actions tab regularly
 
-2. **Update AGENTS.md** - Keep guidelines current
+2. **Update CLAUDE.md** - Keep guidelines current
 
 3. **Adjust script** - Modify checks as project evolves
 
@@ -317,7 +317,7 @@ Potential improvements:
 ## Support
 
 - **Issues:** Report workflow problems in GitHub Issues
-- **Documentation:** See [AGENTS.md](../../AGENTS.md) for coding guidelines
+- **Documentation:** See [CLAUDE.md](../../CLAUDE.md) for coding guidelines
 - **Script:** See [.skills/README.md](../../.skills/README.md) for review script details
 
 ---
