@@ -6,6 +6,7 @@
   "files.associations": {
     "*.css": "tailwindcss"
   },
+  "biome.enabled": false,
   "cSpell.words": [
     "DISPLAYNAME",
     "elif",
