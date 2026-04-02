@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Merge branch 'main' of github.com:bill742/nextstarter
 
+- Set turbopack.root to project directory.
 ### Added
 
 - Add changelog writer to workflow.
