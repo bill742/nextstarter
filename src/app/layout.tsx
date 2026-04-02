@@ -21,15 +21,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || ""),
   openGraph: {
     description: process.env.NEXT_PUBLIC_SITE_METADESCRIPTION,
     images: "",
-    title: "NextStarter",
+    title: process.env.NEXT_PUBLIC_SITE_TITLE,
   },
   title: {
-    default: "NextStarter",
-    template: "%s | NextStarter",
+    default: process.env.NEXT_PUBLIC_SITE_TITLE || "",
+    template: "%s | process.env.NEXT_PUBLIC_SITE_TITLE",
   },
   twitter: {
     card: "summary_large_image",
