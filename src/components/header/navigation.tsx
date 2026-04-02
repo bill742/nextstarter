@@ -1,10 +1,21 @@
 import { scrollToSection } from "@/lib/utils";
 
+/**
+ * Navigation items displayed in the header.
+ * Each item maps a label to an anchor href for smooth scrolling.
+ */
 export const navigationItems = [
   { href: "#", id: 3, label: "Menu Item 1" },
   { href: "#", id: 2, label: "Menu Item 2" },
 ];
 
+/**
+ * Horizontal navigation bar rendered in the site header.
+ * Hidden on mobile; visible at the `md` breakpoint and above.
+ * Each item scrolls to the corresponding page section on click.
+ *
+ * @returns The nav element containing the list of navigation buttons.
+ */
 const Navigation = () => {
   return (
     <nav className="hidden items-center gap-6 md:flex">
