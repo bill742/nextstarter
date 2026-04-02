@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   openGraph: {
     description: process.env.NEXT_PUBLIC_SITE_METADESCRIPTION,
     images: "",
-    title: process.env.NEXT_PUBLIC_SITE_TITLE,
+    title: process.env.NEXT_PUBLIC_SITE_NAME,
   },
   title: {
-    default: process.env.NEXT_PUBLIC_SITE_TITLE || "",
-    template: "%s | process.env.NEXT_PUBLIC_SITE_TITLE",
+    default: process.env.NEXT_PUBLIC_SITE_NAME || "",
+    template: "%s | process.env.NEXT_PUBLIC_SITE_NAME",
   },
   twitter: {
     card: "summary_large_image",
